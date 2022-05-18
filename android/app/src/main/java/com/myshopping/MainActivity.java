@@ -1,4 +1,4 @@
-package com.myshopping;
+package wcfx.myshopping;
 
 import android.os.Bundle;
 
