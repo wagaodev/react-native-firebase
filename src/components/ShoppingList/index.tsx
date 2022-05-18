@@ -8,10 +8,15 @@ export function ShoppingList() {
   const [products, setProducts] = useState<ProductProps[]>();
 
   useEffect(() => {
-    const subscribe = firestore()
+    const listener = firestore()
       .collection("products")
-      .onSnapshot((querySnapShop) => {
-        const data = querySnapShop.docs.map((doc) => {
+      // .where("quantity", ">", 2) // INFO: - Caso eu queira filtrar, posso utilizar o where para realizar este passo.
+      // .limit(3) INFO: - Caso eu queira limitar a quantidade de produtos, posso utilizar o limit para realizar este passo.
+      // .orderBy("quantity") INFO: - Caso eu precise ordenar, ele recebe dois parametros, o produto e a maneira de ordenação.
+      // .startAt(1) INFO: - Assim consigo filtrar a quantidade que inicia
+      // .endAt(11) INFO: - e a quantidade que termina baseado no valor passado no orderBy.
+      .onSnapshot((querySnapShot) => {
+        const data = querySnapShot.docs.map((doc) => {
           return {
             id: doc.id,
             ...doc.data(),
@@ -20,7 +25,7 @@ export function ShoppingList() {
         setProducts(data);
       });
 
-    return () => subscribe();
+    return () => listener();
   }, []);
 
   return (
