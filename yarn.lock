@@ -1499,6 +1499,11 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-14.9.4.tgz#e31f06998a160c6d3c655f03153b5fdba5ac16f4"
   integrity sha512-vojJskuLx70FyPboeD9wIJ3KNAq25aW2RkKEYu/WJ0r4eg2/CCDGsjEeN8vBooUbUW6VC1+cEpXKA3Q++Sna4w==
 
+"@react-native-firebase/storage@^14.9.4":
+  version "14.9.4"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/storage/-/storage-14.9.4.tgz#21c6cf53a54b6d45d7d27f01800deb5ad3e04796"
+  integrity sha512-Qvlnftov2pdlu6+FwXeI+3Y3iDwUJNdR5wu5QTZFWJM1gKvUG532jTuu9ZHzD6JdnsnPvnnrWEPhLHTzaTZ7pQ==
+
 "@react-native/assets@1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@react-native/assets/-/assets-1.0.0.tgz#c6f9bf63d274bafc8e970628de24986b30a55c8e"
@@ -2579,6 +2584,11 @@ destroy@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
   integrity sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=
+
+dotenv@^16.0.1:
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.0.1.tgz#8f8f9d94876c35dac989876a5d3a82a267fdce1d"
+  integrity sha512-1K6hR6wtk2FviQ4kEiSjFiH5rpzEVi8WW0x96aztHVMhEspNpc4DVOUTEHtEva5VThQ8IaBX1Pe4gSzpVVUsKQ==
 
 ee-first@1.1.1:
   version "1.1.1"
