@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import { FlatList } from "react-native";
 import firestore from "@react-native-firebase/firestore";
 import { styles } from "./styles";
-import { ProductProps } from "../Product";
-import { Product } from "..";
+import { Product, ProductProps } from "../Product";
 
-export default function ShoppingList() {
+export function ShoppingList() {
   const [products, setProducts] = useState<ProductProps[]>();
 
   useEffect(() => {

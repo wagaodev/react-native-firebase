@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import * as ImagePicker from "expo-image-picker";
 import storage from "@react-native-firebase/storage";
 
-import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
+import { Button } from "../../components/Button";
 import { Photo } from "../../components/Photo";
 
 import { Container, Content, Progress, Transferred } from "./styles";

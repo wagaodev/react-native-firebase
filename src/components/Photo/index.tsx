@@ -12,7 +12,7 @@ type Props = TouchableOpacityProps & {
   uri?: string;
 };
 
-export default function Photo({ uri, ...rest }: Props) {
+export function Photo({ uri, ...rest }: Props) {
   return (
     <TouchableOpacity activeOpacity={0.8} {...rest}>
       <Container>

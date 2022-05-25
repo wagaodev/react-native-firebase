@@ -1,20 +1,25 @@
 import React, { useCallback, useState } from "react";
 
 import { Container, Account, Title, Subtitle } from "./styles";
-import { Button, Input, ButtonText } from "../../components";
+import { Button } from "../../components/Button";
+import { Input } from "../../components/Input";
+import { ButtonText } from "../../components/ButtonText";
 import auth from "@react-native-firebase/auth";
 import { Alert } from "react-native";
 import { catchError } from "../../utils/firebaseErrors";
+import { useNavigation } from "@react-navigation/native";
 
 export function SignIn() {
   const [email, setEmail] = useState<string>("");
   const [pass, setPass] = useState<string>("");
 
-  const handleSignInAnonymous = useCallback(async () => {
-    const { user } = await auth().signInAnonymously();
+  const { navigate } = useNavigation();
 
-    console.log(user);
-  }, []);
+  // const handleSignInAnonymous = useCallback(async () => {
+  //   const { user } = await auth().signInAnonymously();
+
+  //   console.log(user);
+  // }, []);
 
   const handleCreateAccount = () => {
     auth()
@@ -25,6 +30,11 @@ export function SignIn() {
       });
   };
 
+  const handleSignInWithEmailAndPassword = async () => {
+    const { user } = await auth().signInWithEmailAndPassword(email, pass);
+
+    console.log(user);
+  };
   return (
     <Container>
       <Title>MyShopping</Title>
@@ -46,7 +56,7 @@ export function SignIn() {
         secureTextEntry
       />
 
-      <Button title="Entrar" onPress={handleSignInAnonymous} />
+      <Button title="Entrar" onPress={handleSignInWithEmailAndPassword} />
 
       <Account>
         <ButtonText title="Recuperar senha" onPress={handleCreateAccount} />

@@ -4,9 +4,10 @@ import { v4 as uuid } from "uuid";
 import firestore from "@react-native-firebase/firestore";
 
 import { Container } from "./styles";
-import { ButtonIcon, Input } from "..";
+import { ButtonIcon } from "../ButtonIcon";
+import { Input } from "../Input";
 
-export default function FormBox() {
+export function FormBox() {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(0);
 

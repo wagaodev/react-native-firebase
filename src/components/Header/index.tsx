@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonIcon } from "..";
+import { ButtonIcon } from "../ButtonIcon";
 
 import { Container, Title } from "./styles";
 
@@ -8,7 +8,7 @@ type Props = {
   showLogoutButton?: boolean;
 };
 
-export default function Header({ title, showLogoutButton = false }: Props) {
+export function Header({ title, showLogoutButton = false }: Props) {
   return (
     <Container showLogoutButton={showLogoutButton}>
       <Title>{title}</Title>

@@ -7,6 +7,6 @@ type Props = TextInputProps & {
   size?: "small" | "medium" | "large";
 };
 
-export default function Input({ size = "large", ...rest }: Props) {
+export function Input({ size = "large", ...rest }: Props) {
   return <TextInput size={size} {...rest} />;
 }

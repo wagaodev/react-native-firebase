@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ButtonIcon } from "..";
+import { ButtonIcon } from "../ButtonIcon";
 import { Container, Info, Name, Path, Options } from "./styles";
 
 export type FileProps = {
@@ -14,7 +14,7 @@ type Props = {
   onDelete?: () => void;
 };
 
-export default function File({ data, onShow, onDelete }: Props) {
+export function File({ data, onShow, onDelete }: Props) {
   return (
     <Container>
       <Info>

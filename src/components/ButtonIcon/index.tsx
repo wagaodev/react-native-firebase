@@ -11,7 +11,7 @@ type Props = TouchableOpacityProps & {
   icon?: React.ComponentProps<typeof MaterialIcons>["name"];
 };
 
-export default function ButtonIcon({
+export function ButtonIcon({
   color = "success",
   size = "small",
   icon,
