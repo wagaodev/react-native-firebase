@@ -30,10 +30,19 @@ export function SignIn() {
       });
   };
 
-  const handleSignInWithEmailAndPassword = async () => {
-    const { user } = await auth().signInWithEmailAndPassword(email, pass);
+  const handleSignInWithEmailAndPassword = () => {
+    auth()
+      .signInWithEmailAndPassword(email, pass)
+      .then(({ user }) => console.log(user))
+      .catch((error) => {
+        catchError(error);
+      });
+  };
 
-    console.log(user);
+  const handleForgotPassword = () => {
+    auth()
+      .sendPasswordResetEmail(email)
+      .then(() => Alert.alert("Enviamos um link no seu email."));
   };
   return (
     <Container>
@@ -59,7 +68,7 @@ export function SignIn() {
       <Button title="Entrar" onPress={handleSignInWithEmailAndPassword} />
 
       <Account>
-        <ButtonText title="Recuperar senha" onPress={handleCreateAccount} />
+        <ButtonText title="Recuperar senha" onPress={handleForgotPassword} />
         <ButtonText title="Criar minha conta" onPress={handleCreateAccount} />
       </Account>
     </Container>
