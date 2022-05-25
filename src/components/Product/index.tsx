@@ -1,7 +1,7 @@
 import React from "react";
 import firestore from "@react-native-firebase/firestore";
 
-import { ButtonIcon } from "../ButtonIcon";
+import { ButtonIcon } from "..";
 import { Container, Info, Title, Quantity, Options } from "./styles";
 import { Alert } from "react-native";
 
@@ -16,7 +16,7 @@ type Props = {
   data: ProductProps;
 };
 
-export function Product({ data }: Props) {
+export default function Product({ data }: Props) {
   const handleDoneToggle = () => {
     firestore().collection("products").doc(data.id).update({
       done: !data.done,
